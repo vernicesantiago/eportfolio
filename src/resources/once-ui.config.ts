@@ -152,6 +152,7 @@ const schema: SchemaConfig = {
 const sameAs: SameAsConfig = {
   linkedin: "https://www.linkedin.com/company/once-ui/",
   discord: "https://discord.com/invite/5EyAQ4eNdS",
+  threads: "https://threads.com/",
 };
 
 // social sharing configuration for blog posts
