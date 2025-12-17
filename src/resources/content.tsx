@@ -1,21 +1,16 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import { About, Blog, Gallery, Home, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
-};
-
-const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  firstName: "Vernice Marie",
+  lastName: "Santiago",
+  name: `Vernice Marie Santiago`,
+  role: "Copernicus Master in Digital Earth",
+  avatar: "/images/avatar.png",
+  email: "vernice.santiago@stud.plus.ac.at",
+  location: "Europe/Vienna", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  displayLocation: "Salzburg, Austria",
+  languages: [], // optional: Leave the array empty if you don't want to display languages
 };
 
 const social: Social = [
@@ -23,60 +18,57 @@ const social: Social = [
   // Import new icons in /once-ui/icons.ts
   // Set essentials: true for links you want to show on the about page
   {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system",
-    essential: true,
-  },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-    essential: true,
-  },
-  {
     name: "Email",
     icon: "email",
     link: `mailto:${person.email}`,
     essential: true,
   },
+  {
+    name: "LinkedIn",
+    icon: "linkedin",
+    link: "https://www.linkedin.com/in/vernicesantiago/",
+    essential: true,
+  },
+  {
+    name: "GitHub",
+    icon: "github",
+    link: "https://github.com/vernicesantiago/",
+    essential: true,
+  },
+  {
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/photosbyvernice",
+    essential: false,
+  },
 ];
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/images/avatar.png",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
+  title: `${person.name}'s Portfolios`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Hello there! I'm Vernice.</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+        Check out the <strong className="ml-4">Copernicus Master in Digital Earth</strong> program
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "https://master-cde.eu/",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+    I am a first-year graduate student in the <Text as="span" size="xl" weight="strong">
+    Erasmus Mundus Copernicus Master in Digital Earth</Text>.
+    My international studies begin at the <Text as="span" size="xl" weight="strong"> 
+    University of Salzburg (PLUS)</Text>, focusing on Geoinformatics and Earth Observation, 
+    before moving to <Text as="span" size="xl" weight="strong">Palacký University Olomouc (UPOL) </Text>
+    for specialized coursework in Advanced Geovisualization and Cartography.
 </>
   ),
 };
@@ -93,138 +85,327 @@ const about: About = {
   avatar: {
     display: true,
   },
-  calendar: {
+  downloadCV: {
     display: true,
-    link: "https://cal.com",
+    link: "/pdf/cv.pdf",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Vernice is a Geospatial Specialist with a strong foundation in GIS, remote sensing, and data analysis. She graduated with a 
+        degree in Geodetic Engineering from the University of the Philippines Diliman, with research experience in 3D city modeling
+        and interdisciplinary geospatial projects. She is skilled in leveraging advanced geospatial tools, programming languages,
+        and open-source software to address real-world challenges using aerial and satellite imagery, airborne LiDAR, and
+        field observation data. She has a passion for innovation and utilizing free and open data to develop sustainable
+        geospatial solutions.
       </>
     ),
-  },
-  work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
-    experiences: [
-      {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
-        achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
-        ],
-        images: [],
-      },
-    ],
-  },
-  studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
-    institutions: [
-      {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
-      },
-    ],
   },
   technical: {
     display: true, // set to false to hide this section
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "GIS Softwares",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <></>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
+            name: "QGIS",
+            icon: "qgis",
+          },
+          {
+            name: "ArcGIS Pro",
+            icon: "arcgis",
+          },
+          {
+            name: "Civil3D",
+            icon: "civil3d",
+          },
+          {
+            name: "Google Earth Pro",
+            icon: "googleearth",
           },
         ],
         // optional: leave the array empty if you don't want to display images
         images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
         ],
       },
       {
-        title: "Next.js",
+        title: "Remote Sensing Softwares",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <></>
         ),
         tags: [
           {
+            name: "Agisoft Metashape Professional",
+          },
+          {
+            name: "PIX4D",
+          },
+          {
+            name: "SNAP (Sentinel Applications Program)",
+          },
+          {
+            name: "ENVI (Environment for Visualizing Images)",
+          },
+          {
+            name: "Cloud Compare",
+          },
+          {
+            name: "LASTools",
+          },
+        ],
+        // optional: leave the array empty if you don't want to display images
+        images: [
+        ],
+      },
+      {
+        title: "Programming Languages",
+        description: (
+          <></>
+        ),
+        tags: [
+          {
+
+            name: "Python",
+            icon: "python",
+          },
+          {
+
+            name: "C",
+            icon: "Clanguage",
+          },
+          {
+
+            name: "Java",
+            icon: "java",
+          },
+          {
+
             name: "JavaScript",
             icon: "javascript",
+          },
+          {
+
+            name: "HTML",
+            icon: "html",
           },
           {
             name: "Next.js",
             icon: "nextjs",
           },
+        ],
+        // optional: leave the array empty if you don't want to display images
+        images: [
+        ],
+      },
+      {
+        title: "Surveying",
+        description: (
+          <></>
+        ),
+        tags: [
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "Total Station",
+          },
+          {
+            name: "Autolevel",
+          },
+          {
+            name: "GPS",
+          },
+          {
+            name: "UAV sensors and platforms",
+          },
+          {
+            name: "LiDAR",
           },
         ],
         // optional: leave the array empty if you don't want to display images
         images: [
+        ],
+      },
+    ],
+  },
+  studies: {
+    display: true, // set to false to hide this section
+    title: "Education",
+    institutions: [
+      {
+        name: "Palacký University Olomouc | September 2025 - present",
+        description: <>M.Sc., double degree, (EMJM) Copernicus Master in Digital Earth - Geovisualisation & Geocommunication</>,
+        images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
+            src: "/images/projects/project-01/CDE_vertical.png",
             alt: "Project image",
-            width: 16,
-            height: 9,
+            width: 5,
+            height: 5,
+          },
+          {
+            src: "/images/projects/project-01/UPOL.png",
+            alt: "Project image",
+            width: 5,
+            height: 5,
+          },
+          {
+            src: "/images/projects/project-01/OEAD_german.png",
+            alt: "Project image",
+            width: 5,
+            height: 5,
+          },
+          {
+            src: "/images/projects/project-01/Co-funded by EU.jpg",
+            alt: "Project image",
+            width: 2,
+            height: 2,
+          },
+        ],
+      },
+      {
+        name: "Paris Lodron Universität Salzburg | September 2025 - present",
+        description: <>M.Sc., double degree, (EMJM) Copernicus Master in Digital Earth - Geoinformatics & Earth Oberservation</>,
+        images: [
+          {
+            src: "/images/projects/project-01/CDE_vertical.png",
+            alt: "Project image",
+            width: 5,
+            height: 5,
+          },
+          {
+            src: "/images/projects/project-01/PLUS.jpg",
+            alt: "Project image",
+            width: 5,
+            height: 5,
+          },
+          {
+            src: "/images/projects/project-01/OEAD_german.png",
+            alt: "Project image",
+            width: 5,
+            height: 5,
+          },
+          {
+            src: "/images/projects/project-01/Co-funded by EU.jpg",
+            alt: "Project image",
+            width: 2,
+            height: 2,
+          },
+        ],
+      },
+      {
+        name: "University of the Philippines Diliman | July 2021",
+        description: <>Bachelor of Science in Geodetic Engineering</>,
+        images: [
+          {
+            src: "/images/projects/project-01/UP.png",
+            alt: "Project image",
+            width: 5,
+            height: 5,
+          },
+        ]
+      },
+    ],
+  },
+  work: {
+    display: true, // set to false to hide this section
+    title: "Work Experience",
+    experiences: [
+      {
+        company: "Propeller Aero",
+        timeframe: "January 2024 - September 2025",
+        role: "Geospatial Specialist",
+        achievements: [
+          <>
+            Processed photogrammetric and LiDAR data into accurate 3D topographic maps by interpreting 
+            drone and GPS survey data, using GIS software and web-based platforms, and ensuring quality
+            through automated and manual checks.
+          </>,
+          <>
+            Provided technical assistance to clients with data capture and/or output issues and 
+            collaborating across the global team in delivering high-quality support
+          </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/projects/project-01/Propeller.png",
+            alt: "Project image",
+            width: 5,
+            height: 5,
+          },
+        ],
+      },
+      {
+        company: "First Balfour",
+        timeframe: "February 2022 - August 2023",
+        role: "Geodetic Engineer | Management Trainee",
+        achievements: [
+          <>
+            Conducted various surveys, including construction layout and topographic control, 
+            across five project sites, preparing detailed survey data, maps, and documentation.
+          </>,
+          <>
+            Participated in the Junior Management Training Program with a focus on corporate business
+            operations, and managed procurement, sourcing, and contract negotiation for technical services
+            and materials.
+          </>,
+        ],
+        images: [
+          {
+            src: "/images/projects/project-01/FirstBalfour.png",
+            alt: "Project image",
+            width: 5,
+            height: 5,
+          },
+        ],
+      },
+      {
+        company: "UP Training Center for Applied Geodesy and Photogrammetry",
+        timeframe: "September 2020 - January 2021",
+        role: "Remote Sensing & Geomatics Assistant",
+        achievements: [
+          <>
+            Automated satellite data parameter extraction using Python from Sentinel-2 images and 
+            conducted quality assurance tests for rice classification results.
+          </>,
+          <>
+            Wrote a comprehensive review of global rice mapping studies and designed training materials
+            for the implementing government agency, the Department of Agriculture (DA)- Philippine Rice
+            Research Institute (PhilRice).
+          </>,
+        ],
+        images: [
+          {
+            src: "/images/projects/project-01/TCAGP.png",
+            alt: "Project image",
+            width: 5,
+            height: 5,
+          },
+        ],
+      },
+      {
+        company: "UP Training Center for Applied Geodesy and Photogrammetry",
+        timeframe: "June - July 2019",
+        role: "University Research Assistant",
+        achievements: [
+          <>
+            Researched satellite data for forest assessment and irrigation applications, focusing on 
+            the National Greening Program.
+          </>,
+          <>
+            Designed training materials for government agencies and created promotional materials for
+            a national science and technology event.
+          </>,
+        ],
+        images: [
+          {
+            src: "/images/projects/project-01/TCAGP.png",
+            alt: "Project image",
+            width: 5,
+            height: 5,
           },
         ],
       },
@@ -235,7 +416,7 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "In this page, I will be sharing what I have learned so far from my CDE journey. Stay tuned!",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
@@ -243,8 +424,8 @@ const blog: Blog = {
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
+  label: "Portfolio",
+  title: `Publication – Undergraduate Thesis`,
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
@@ -252,7 +433,7 @@ const work: Work = {
 
 const gallery: Gallery = {
   path: "/gallery",
-  label: "Gallery",
+  label: "Photography",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
   // Images by https://lorant.one
@@ -264,22 +445,7 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
       src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
       alt: "image",
       orientation: "vertical",
     },
@@ -289,9 +455,9 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-4.jpg",
+      src: "/images/gallery/vertical-2.jpg",
       alt: "image",
-      orientation: "horizontal",
+      orientation: "vertical",
     },
     {
       src: "/images/gallery/vertical-3.jpg",
@@ -301,4 +467,4 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, home, about, blog, work, gallery };

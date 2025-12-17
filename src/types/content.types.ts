@@ -25,22 +25,12 @@ export type Person = {
   email: string;
   /** IANA time zone location */
   location: IANATimeZone;
+  /** Display Location */
+  displayLocation: string;
   /** Languages spoken */
   languages?: string[];
 };
 
-/**
- * Newsletter Section
- * @description The below information will be displayed on the Home page in Newsletter block
- */
-export type Newsletter = {
-  /** Whether to display the newsletter section */
-  display: boolean;
-  /** Title of the newsletter   */
-  title: React.ReactNode;
-  /** Description of the newsletter */
-  description: React.ReactNode;
-};
 
 /**
  * Social link configuration.
@@ -105,7 +95,7 @@ export interface Home extends BasePageConfig {
 
 /**
  * About page configuration.
- * @description Configuration for the About page, including sections for table of contents, avatar, calendar, introduction, work experience, studies, and technical skills.
+ * @description Configuration for the About page, including sections for table of contents, avatar, CV, introduction, work experience, studies, and technical skills.
  */
 export interface About extends BasePageConfig {
   /** Table of contents configuration */
@@ -120,11 +110,11 @@ export interface About extends BasePageConfig {
     /** Whether to display the avatar */
     display: boolean;
   };
-  /** Calendar section configuration */
-  calendar: {
-    /** Whether to display the calendar */
+  /** Download CV section configuration */
+  downloadCV: {
+    /** Whether to display the CV */
     display: boolean;
-    /** Link to the calendar */
+    /** Link to the CV */
     link: string;
   };
   /** Introduction section */
@@ -136,23 +126,24 @@ export interface About extends BasePageConfig {
     /** Description of the introduction section */
     description: React.ReactNode;
   };
-  /** Work experience section */
-  work: {
-    /** Whether to display work experience */
+  /** Technical skills section */
+  technical: {
+    /** Whether to display technical skills section */
     display: boolean;
-    /** Title for the work experience section */
+    /** Title for the technical skills section */
     title: string;
-    /** List of work experiences */
-    experiences: Array<{
-      /** Company name */
-      company: string;
-      /** Timeframe of employment */
-      timeframe: string;
-      /** Role or job title */
-      role: string;
-      /** Achievements at the company */
-      achievements: React.ReactNode[];
-      /** Images related to the experience */
+    /** List of technical skills */
+    skills: Array<{
+      /** Skill title */
+      title: string;
+      /** Skill description */
+      description?: React.ReactNode;
+      /** Skill tags */
+      tags?: Array<{
+        name: string;
+        icon?: string;
+      }>;
+      /** Images related to the skill */
       images?: Array<{
         /** Image source path */
         src: string;
@@ -177,26 +168,36 @@ export interface About extends BasePageConfig {
       name: string;
       /** Description of studies */
       description: React.ReactNode;
+            /** Images related to the skill */
+      images?: Array<{
+        /** Image source path */
+        src: string;
+        /** Image alt text */
+        alt: string;
+        /** Image width ratio */
+        width: number;
+        /** Image height ratio */
+        height: number;
+      }>;
     }>;
   };
-  /** Technical skills section */
-  technical: {
-    /** Whether to display technical skills section */
+  /** Work experience section */
+  work: {
+    /** Whether to display work experience */
     display: boolean;
-    /** Title for the technical skills section */
+    /** Title for the work experience section */
     title: string;
-    /** List of technical skills */
-    skills: Array<{
-      /** Skill title */
-      title: string;
-      /** Skill description */
-      description?: React.ReactNode;
-      /** Skill tags */
-      tags?: Array<{
-        name: string;
-        icon?: string;
-      }>;
-      /** Images related to the skill */
+    /** List of work experiences */
+    experiences: Array<{
+      /** Company name */
+      company: string;
+      /** Timeframe of employment */
+      timeframe: string;
+      /** Role or job title */
+      role: string;
+      /** Achievements at the company */
+      achievements: React.ReactNode[];
+      /** Images related to the experience */
       images?: Array<{
         /** Image source path */
         src: string;

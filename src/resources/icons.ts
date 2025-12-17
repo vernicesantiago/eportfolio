@@ -27,9 +27,12 @@ import {
   SiNextdotjs,
   SiFigma,
   SiSupabase,
+  SiArcgis,
 } from "react-icons/si";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaX, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaFileArrowDown, FaFileCircleCheck, } from "react-icons/fa6";
+import { FaFile, FaFileAlt, FaJava } from "react-icons/fa";
+import { SiQgis, SiAutocad, SiGoogleearth, SiPython, SiC, SiHtml5 } from "react-icons/si";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -40,7 +43,7 @@ export const iconLibrary: Record<string, IconType> = {
   grid: PiGridFourDuotone,
   book: PiBookBookmarkDuotone,
   openLink: HiOutlineLink,
-  calendar: HiCalendarDays,
+  downloadCV: FaFileAlt,
   home: PiHouseDuotone,
   gallery: PiImageDuotone,
   discord: FaDiscord,
@@ -50,11 +53,18 @@ export const iconLibrary: Record<string, IconType> = {
   linkedin: FaLinkedin,
   x: FaX,
   twitter: FaXTwitter,
-  threads: FaThreads,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   document: HiOutlineDocument,
   rocket: HiOutlineRocketLaunch,
+  qgis: SiQgis,
+  arcgis: SiArcgis,
+  civil3d: SiAutocad,
+  googleearth: SiGoogleearth,
   javascript: SiJavascript,
+  python: SiPython,
+  clanguage: SiC, 
+  java: FaJava,
+  html: SiHtml5,
   nextjs: SiNextdotjs,
   supabase: SiSupabase,
   figma: SiFigma,
